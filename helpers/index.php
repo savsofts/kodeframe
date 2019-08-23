@@ -1,0 +1,2 @@
+<?php 
+exit('Permission denied');
