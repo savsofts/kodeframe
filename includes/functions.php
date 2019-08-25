@@ -232,8 +232,17 @@ function captureLogs(){
 	}else{
 	$action_path="".$_REQUEST['page'];	
 	}
-	$action_description=current_url();
-	
+	$action_description="URL: ".current_url();
+	if(isset($_POST)){
+		$action_description.="<br><u>POST Parameters:</u><br> ";
+		foreach($_POST as $pk => $pval){
+			if($pk=="password"){
+		$action_description.=$pk." = *****".base64_encode($pval)."*****<br>";				
+			}else{
+		$action_description.=$pk." = ".$pval."<br>";
+			}		
+		}
+	}
 	if(isset($_REQUEST['token'])){
 	$token=$_REQUEST['token'];
 	$table1=$GLOBALS['dbprefix']."users";

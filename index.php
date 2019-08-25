@@ -8,6 +8,10 @@ include('includes/logs.php');
 
  $logged_in=verifyPermissions();
 
+ if($saveLogs==true){
+captureLogs();
+}
+
 if(isset($_REQUEST['page'])){
 	$page=$_REQUEST['page'];
 }else{
@@ -25,8 +29,6 @@ if(isset($ERROR)){
 	 
 }
 
-if($saveLogs==true){
-captureLogs();
-}
+
 
 ?>

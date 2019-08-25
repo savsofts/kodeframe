@@ -65,7 +65,14 @@ foreach($joins as $jk => $jval){
 
 $title="Edit record";
 $path_header='templates/'.$template.'/header.php';
+$filen='templates/'.$template.'/'.$table_name.'_Edit.php';
+	if(file_exists($filen)){
+$path_content='templates/'.$template.'/'.$table_name.'_Edit.php';
+	}else{
 $path_content='templates/'.$template.'/moduleEdit.php';
+	}
+	
+
 $path_footer='templates/'.$template.'/footer.php';
 include($path_header);
 include($path_content);
