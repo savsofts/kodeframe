@@ -10,7 +10,7 @@ class helper_name{
 	public function post_insert(){
 	/* this function has all post variables to use */		 
 	/* Last inserted id is assigned to variables last_id */		 
-		
+	$last_id=$GLOBALS['last_id'];
 		
 		
 	}
